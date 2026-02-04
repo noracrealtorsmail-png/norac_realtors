@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  password      String?
+  image         String?
+  role          String    @default("USER") // USER, REALTOR, ADMIN
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  listings      Listing[]
+  agentProfile  Agent?
+  inquiries     Inquiry[]
+}
+
+model Agency {
+  id             String    @id @default(cuid())
+  name           String
+  logo           String?
+  coverImage     String?
+  description    String?
+  verified       Boolean   @default(false)
+  rating         Float     @default(0)
+  specialization String?
+  location       String?
+  
+  agents         Agent[]
+  listings       Listing[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Agent {
+  id             String    @id @default(cuid())
+  userId         String    @unique
+  agencyId       String?
+  role           String?   // Principal Broker, Consultant, etc.
+  experience     String?   // e.g., "12 Years"
+  rating         Float     @default(0)
+  specialization String?
+  verified       Boolean   @default(false)
+  
+  user           User      @relation(fields: [userId], references: [id])
+  agency         Agency?   @relation(fields: [agencyId], references: [id])
+  listings       Listing[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Listing {
+  id           String    @id @default(cuid())
+  title        String
+  description  String
+  price        Float
+  priceDisplay String?   // e.g. "KES 185,000,000"
+  location     String
+  type         String    // SALE, RENT
+  category     String    // VILLA, APARTMENT, PENTHOUSE, etc.
+  beds         Int       @default(0)
+  baths        Int       @default(0)
+  sqft         Float?
+  images       String    // Store as JSON string or comma-separated for SQLite
+  features     String    // Store as JSON string or comma-separated
+  isFeatured   Boolean   @default(false)
+  isVerified   Boolean   @default(false)
+  
+  userId       String
+  agentId      String?
+  agencyId     String?
+  
+  owner        User      @relation(fields: [userId], references: [id])
+  agent        Agent?    @relation(fields: [agentId], references: [id])
+  agency       Agency?   @relation(fields: [agencyId], references: [id])
+  inquiries    Inquiry[]
+  
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Inquiry {
+  id         String   @id @default(cuid())
+  listingId  String
+  userId     String?
+  name       String
+  email      String
+  message    String
+  type       String   @default("GENERAL") // GENERAL, VIEWING, VALUATION
+  status     String   @default("NEW")     // NEW, CONTACTED, VIEWING, CLOSED
+  
+  listing    Listing  @relation(fields: [listingId], references: [id])
+  user       User?    @relation(fields: [userId], references: [id])
+  
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
