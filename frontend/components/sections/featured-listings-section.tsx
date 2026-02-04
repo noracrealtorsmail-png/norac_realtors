@@ -218,8 +218,8 @@ export function FeaturedListingsSection() {
             </div>
 
             {/* Edge fading gradients */}
-            <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background via-background/40 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background via-background/40 to-transparent z-10 pointer-events-none"></div>
         </section>
     );
 }
