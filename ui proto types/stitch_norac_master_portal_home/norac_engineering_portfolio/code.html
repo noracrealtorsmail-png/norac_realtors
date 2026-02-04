@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Norac Engineering Portfolio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a693cd", // Amethyst Purple
+                        "secondary": "#C5A059", // Liquid Gold (muted)
+                        "background-light": "#f7f6f7",
+                        "background-dark": "#121212",
+                        "surface-dark": "#1E1E1E",
+                        "surface-darker": "#181818",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px", 
+                        "sm": "2px",
+                        "md": "4px", 
+                        "lg": "8px", 
+                        "xl": "12px", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2f2d34; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a693cd; 
+        }
+
+        /* Hover effect for masonry items */
+        .group:hover .hover-reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white transition-colors duration-300">
+<div class="flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-white/10 bg-background-dark/95 backdrop-blur-md px-6 py-4 lg:px-12">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-tight uppercase">Norac</h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-end gap-10 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-white/70 hover:text-white transition-colors text-sm font-medium leading-normal tracking-wide uppercase" href="#">Home</a>
+<a class="text-white/70 hover:text-white transition-colors text-sm font-medium leading-normal tracking-wide uppercase" href="#">Real Estate</a>
+<a class="text-white text-sm font-medium leading-normal tracking-wide uppercase border-b border-primary pb-0.5" href="#">Engineering</a>
+<a class="text-white/70 hover:text-white transition-colors text-sm font-medium leading-normal tracking-wide uppercase" href="#">About</a>
+</nav>
+<div class="flex gap-4">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-sm h-10 px-6 bg-primary text-background-dark text-xs font-bold uppercase tracking-wider hover:bg-[#b8a7d8] transition-colors">
+<span class="truncate">Get a Quote</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-sm h-10 px-6 border border-white/20 hover:border-white/40 bg-transparent text-white text-xs font-bold uppercase tracking-wider transition-colors">
+<span class="truncate">Login</span>
+</button>
+</div>
+</div>
+<div class="flex lg:hidden text-white">
+<span class="material-symbols-outlined cursor-pointer">menu</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center w-full px-4 md:px-12 lg:px-24 py-8 md:py-16">
+<div class="max-w-[1400px] w-full flex flex-col gap-12">
+<!-- Hero Section: Compact & Impactful -->
+<div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-end border-b border-white/10 pb-8">
+<div class="flex flex-col gap-2 max-w-2xl">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                            Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">Excellence</span>
+</h1>
+<p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed">
+                            Precision-engineered solutions shaping the future of industrial infrastructure.
+                        </p>
+</div>
+</div>
+<!-- Sticky Filter Bar & Controls -->
+<div class="sticky top-[73px] z-40 bg-background-dark/95 backdrop-blur-sm py-4 border-b border-white/5 -mx-4 px-4 md:-mx-12 md:px-12 lg:-mx-24 lg:px-24 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center transition-all duration-300">
+<!-- Filters -->
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-2 rounded-sm bg-primary text-background-dark text-sm font-bold uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(166,147,205,0.3)]">
+                            All Projects
+                        </button>
+<button class="px-5 py-2 rounded-sm bg-surface-dark border border-white/10 hover:border-secondary/50 text-gray-300 hover:text-white text-sm font-medium uppercase tracking-wide transition-all">
+                            Civil
+                        </button>
+<button class="px-5 py-2 rounded-sm bg-surface-dark border border-white/10 hover:border-secondary/50 text-gray-300 hover:text-white text-sm font-medium uppercase tracking-wide transition-all">
+                            Structural
+                        </button>
+<button class="px-5 py-2 rounded-sm bg-surface-dark border border-white/10 hover:border-secondary/50 text-gray-300 hover:text-white text-sm font-medium uppercase tracking-wide transition-all">
+                            Industrial
+                        </button>
+<button class="px-5 py-2 rounded-sm bg-surface-dark border border-white/10 hover:border-secondary/50 text-gray-300 hover:text-white text-sm font-medium uppercase tracking-wide transition-all">
+                            Energy
+                        </button>
+</div>
+<!-- Layout Toggle / View Options (Optional but nice for luxury feel) -->
+<div class="hidden md:flex gap-2 text-gray-400">
+<button class="p-2 hover:text-white transition-colors"><span class="material-symbols-outlined">grid_view</span></button>
+<button class="p-2 hover:text-white transition-colors"><span class="material-symbols-outlined">view_list</span></button>
+</div>
+</div>
+<!-- Masonry Grid Gallery -->
+<!-- We simulate masonry with columns for pure CSS, or a grid with varied spans -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px] md:auto-rows-[400px]">
+<!-- Item 1: Large Feature -->
+<div class="group relative md:col-span-2 rounded-sm overflow-hidden cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern high-rise corporate building with glass facade" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBm9NfBUr5Es584a-8UkP3bjSfGjBRutFNRK4LdXPj9gtgpFznCyPGONMee2Lz5uMCWxnCFsa4BaHIBCilCAvGM-uGzTmWzJ8YmeoU8Ns1elNrI83ihj4hxXilaVUz0ZdniiJnhK1OAHLSYwN7pz73mf7ag2gbLMbTpYy2QiHvtTOYGybkSbF1SW7D4dIVjKShR8vCgCFUxSF7SLLVNGM1o3JAMeq3lUdOsemTc2BtrkBlXxNaCA0b3qfVmFejmoLmvg8wVAbKnxSg');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+<!-- Magnetic Button Area (Visual representation) -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<div class="bg-primary/90 text-background-dark font-bold text-sm uppercase tracking-wider py-3 px-6 rounded-full transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg backdrop-blur-sm">
+                                View Case Study
+                            </div>
+</div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<span class="text-secondary text-xs font-bold uppercase tracking-widest mb-2 block">High-Rise</span>
+<h3 class="text-white text-2xl md:text-3xl font-bold uppercase tracking-tight mb-2">The Pinnacle Heights</h3>
+<div class="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
+<p class="text-gray-300 text-sm font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Nairobi, Kenya • 2023 Completion
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Tall Portrait -->
+<div class="group relative rounded-sm overflow-hidden md:row-span-2 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Construction worker inspecting industrial bridge structure" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwkddiTKZYRAbayAyGJX7LOWCColG_O47aI99LHnvPCh-RoivMwoo9vBtOYJZVKFBvMOu-ogQGRea7D6tOu-apwJ6xQE6mYJhoLzhP7rpbD7YmjWBCb8oxBZQWeRP6YpCu8XvH7zmR2VF8ysS22Xhra06pMN2AMvwqeb1vRnZyg7sRO6BqMclYdZ7ghMaB793ypz_JdY7XLf8f56dMJfInqOcDq5lhGjIMIRw2-KGgnBWdnp7DDZKghKNTRZ6xkHlA01VrDYaahNA');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<div class="bg-primary/90 text-background-dark font-bold text-sm uppercase tracking-wider py-3 px-6 rounded-full transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg backdrop-blur-sm">
+                                View Case Study
+                            </div>
+</div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<span class="text-secondary text-xs font-bold uppercase tracking-widest mb-2 block">Civil Infrastructure</span>
+<h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Nairobi Expressway</h3>
+<div class="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
+<p class="text-gray-300 text-sm font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Section B • Transport
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: Standard -->
+<div class="group relative rounded-sm overflow-hidden cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Solar panels array in a large field during sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7BSyIn5BlWWHK1QWzhmUV3D8Wtd4oAf-lBbF9mx-wwBG79nY82H7Z2h0qk5Ir-EhQkJbpvx100U_xCDrYh6-9BUy6lDUcaRGxDV19el7XUzy2GFzqypgf2rkCq8eF15LBMO-m5ABVfrdzAhUHaI7w9TiGhTOB8rYj5NzKB_WTtQk8rZ8SeN5RRl2fLdhfaNl7q6Wp0UVN3HLwHKeiofb7H23aWxp05DtaPohfNNvGEuJBZgeyCwGMbx6hxddwMPUhMIdU8YvUJxM');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<div class="bg-primary/90 text-background-dark font-bold text-sm uppercase tracking-wider py-3 px-6 rounded-full transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg backdrop-blur-sm">
+                                View Case Study
+                            </div>
+</div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<span class="text-secondary text-xs font-bold uppercase tracking-widest mb-2 block">Sustainable Energy</span>
+<h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Solar Farm Alpha</h3>
+<div class="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
+<p class="text-gray-300 text-sm font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Rift Valley • 50MW Output
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4: Standard -->
+<div class="group relative rounded-sm overflow-hidden cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Industrial machinery inside a modern factory plant" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9IUWRrsBpwWA39KtvgvgCT79KdHLamaPXwnTQYqrZ4tIVKXZBE91rd-A_gvCaNHftXNDA9Kn1m70NT0HzBX1h-Umpdtp3vUetoMb4AGh3WIsDA994b_a8Fm8EdFjAPdKdCnuMhQY80WMbyKmKBkvlIAfeiOIJcnlo58iTQTD6SnrqDhI17mBMdXDO1AgOEByp0eemgrhSJNM-zN4j9ShvtVXDLLn9T1Xkkt6p7zRCR7VEvKBiMu_IZSY3Tu_a3FtfdRkucpr4dwM');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<div class="bg-primary/90 text-background-dark font-bold text-sm uppercase tracking-wider py-3 px-6 rounded-full transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg backdrop-blur-sm">
+                                View Case Study
+                            </div>
+</div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<span class="text-secondary text-xs font-bold uppercase tracking-widest mb-2 block">Industrial Plants</span>
+<h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Mombasa Expansion</h3>
+<div class="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
+<p class="text-gray-300 text-sm font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Coast Region • Logistics
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 5: Standard -->
+<div class="group relative rounded-sm overflow-hidden cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern geometric architecture detail concrete and glass" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC04QNk20am_4cZFIIa3F2-6xJ79x2FN-fbAP_jmC7QqE_V1ZUlAzw28ThDktq57EbSFXiNZ02-n2L0IDHYDVqb19zMrsWIRtvHQTHrYHiVnpbG80fhq_qz2wIagwS7sb2ZN5jGzQPNta4CrjxkFlpB4-_eScXLJF124uy09dkkY2er4VQ8F6ZO4YcsEnh-N8-v_9A0-M4ObfkmQDO7hdoxS-nlLdzJFXDfGrfj6ZKGdWjrFe6ghb5SsAFYr9yFb21vv7x9V5bkjO4');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<div class="bg-primary/90 text-background-dark font-bold text-sm uppercase tracking-wider py-3 px-6 rounded-full transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg backdrop-blur-sm">
+                                View Case Study
+                            </div>
+</div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<span class="text-secondary text-xs font-bold uppercase tracking-widest mb-2 block">Commercial</span>
+<h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Westlands Complex</h3>
+<div class="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
+<p class="text-gray-300 text-sm font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Nairobi • Mixed Use
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 6: Standard -->
+<div class="group relative rounded-sm overflow-hidden cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Geothermal power plant steam rising from pipes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIpsEdpfQpUOcqbBfVd-V3pCj_HR2qKCf_8P9cp4Ax9Zhh4T7ZCTylFXRKQIL_HOaIIpFBkkxeq2AP896plHwlEBX-m0P-TzWHxCO7CaYIMNzk-Y6XyTcQ09bRE67OEG2EmTVSakAwX9jzURTZ4P4-bzTewZSbDyG0DthAaVbSWHcTUJj3mLBN7fjPDJ9vPNNUbEf87VZXjvomt5QG4obyPkMTjsIq4ZBiwqclU1Jpkzc1Nd0tNNFu7rptlF5nHs1GKujIid87VvY');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<div class="bg-primary/90 text-background-dark font-bold text-sm uppercase tracking-wider py-3 px-6 rounded-full transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg backdrop-blur-sm">
+                                View Case Study
+                            </div>
+</div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<span class="text-secondary text-xs font-bold uppercase tracking-widest mb-2 block">Energy</span>
+<h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Rift Valley Geo</h3>
+<div class="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
+<p class="text-gray-300 text-sm font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        Naivasha • Renewable
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More / Pagination -->
+<div class="flex justify-center pt-8">
+<button class="group flex items-center gap-3 px-8 py-3 bg-transparent border border-white/20 hover:border-primary rounded-sm transition-all duration-300">
+<span class="text-white text-sm font-bold uppercase tracking-widest group-hover:text-primary transition-colors">Load More Projects</span>
+<span class="material-symbols-outlined text-white group-hover:text-primary transition-colors text-lg">arrow_downward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-darker border-t border-white/5 py-16 px-6 lg:px-24 text-white">
+<div class="max-w-[1400px] w-full mx-auto flex flex-col md:flex-row justify-between gap-12">
+<div class="flex flex-col gap-6 max-w-sm">
+<div class="flex items-center gap-2 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-base font-bold tracking-widest uppercase">Norac</h2>
+</div>
+<p class="text-gray-500 text-sm font-light leading-relaxed">
+                        Redefining the skyline with precision engineering and luxury real estate solutions. From concept to concrete, we build the future.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-12 lg:gap-24">
+<div class="flex flex-col gap-4">
+<h4 class="text-secondary text-xs font-bold uppercase tracking-widest">Sitemap</h4>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Home</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Projects</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Services</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-secondary text-xs font-bold uppercase tracking-widest">Legal</h4>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Terms of Service</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Cookie Settings</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-secondary text-xs font-bold uppercase tracking-widest">Connect</h4>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">LinkedIn</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Instagram</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Twitter</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1400px] mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-600 text-xs">© 2024 Norac Engineering. All rights reserved.</p>
+<div class="flex gap-4">
+<!-- Social Icons could go here -->
+</div>
+</div>
+</footer>
+</div>
+</body></html>

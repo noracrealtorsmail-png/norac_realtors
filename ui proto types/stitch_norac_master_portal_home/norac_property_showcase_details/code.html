@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Norac Property Showcase</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a693cd", // Amethyst Purple
+                        "primary-dark": "#8B6BC2", // Deeper purple for icons/hover
+                        "gold": "#D4AF37", // Gold accent
+                        "background-light": "#f7f6f7",
+                        "background-dark": "#18151d",
+                        "card-glass": "rgba(30, 27, 36, 0.7)",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #18151d; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2f2d34; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a693cd; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2f2d34] bg-[#141316]/90 backdrop-blur-md px-10 py-4">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_543)">
+<path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_543"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-white text-xl font-serif font-bold tracking-tight">Norac</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Buy</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Rent</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Commercial</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Concierge</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center overflow-hidden rounded-full size-10 bg-[#2f2d34] hover:bg-primary transition-colors text-white">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-full size-10 bg-[#2f2d34] hover:bg-primary transition-colors text-white">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+</div>
+</div>
+</header>
+<div class="layout-container flex h-full grow flex-col">
+<!-- Hero Section: Modern Grid -->
+<div class="px-5 md:px-10 py-6 max-w-[1440px] mx-auto w-full">
+<div class="grid grid-cols-4 grid-rows-2 gap-3 h-[500px] w-full rounded-xl overflow-hidden">
+<!-- Main Image -->
+<div class="col-span-4 md:col-span-2 row-span-2 relative group cursor-pointer">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Expansive modern living room with floor to ceiling windows overlooking Nairobi skyline" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBk8D9VGa8uM6LYCo4qtSLKpBFEj-gUEeSC0AKc8ZX8b-yEaj_X8hj2rVAn3DZE0bbZikQ5g0bANDw_CTrLmAU8pcpUMC1Qc7tA8vdq2TMSayFb3_9Oeu8btLJgAhpVCbMwtUprg3k46LPKsADH6UhthCduSdO0TTz4eA1qblGHIIG7EWXESD8rlhXXSF1sVN5c8b2MQ-zDWNthB2U5wxavearKyv8yTbwOHhT6_rM4vOiCyVglvOtROpq84qFYgiJJrxlcXA1AcQY");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-sm uppercase tracking-wider">Virtual Tour</span>
+</div>
+</div>
+<!-- Secondary Images -->
+<div class="col-span-2 md:col-span-1 row-span-1 relative group cursor-pointer">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxurious master bedroom with purple accents and plush bedding" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHVyEaRCn5d6-8rxDV2jrxpxnaAvYmxIyGkTbxE4v5GwuAf1Ef8sGITlxXACtPNiBj1-HiEQMpOrn8ZCITKrPAyLUPvAHh8T-NLGPpVOAla3ynjFgQC5r5j7OIR8FXpG3Cbp0HOcGzN1PKKsWgR8wmIGKpwKI6679H9TFwjM3MHz-_lmS3Rd_l6iey6sTI6eubOf9Djkgny9QSbP9_u8d38cZGVeUF5BqZ77oh0ItcHsR0Zm7bqPJ6B9rvWWXOvkbrItCBslNPRPM");'></div>
+</div>
+<div class="col-span-2 md:col-span-1 row-span-1 relative group cursor-pointer">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="State of the art kitchen with marble countertops and gold fixtures" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfsFdd-fonqzsR5RglsKlaYKIGXG_-h-OnB4FTaYZKeRB2B7OTc4PYMZ2F4hPhvOTrzKLZ45b2byk93TByQON4hAwfkEhDJSHEnqQV-aZcL0U3lruzh_hFXAnYpY2QXMvB6bWHOdf9Lj49BfnoBgnkt-Ia5FWwCT0KOjVRrphjCoY70cd9Yq8CPyxFvVoT_mYPWaBsRLyLIsrYsQIi5iITW-UaF3y-n0Amb_MeP6ik_1-m-wQvxj9bTFB4V1Waz2C1CGjhIK13YDM");'></div>
+</div>
+<div class="col-span-2 md:col-span-1 row-span-1 relative group cursor-pointer">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern bathroom with soaking tub and ambient lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkRfYXlDlZCHxbuNyIp4NjgQ3hThWramTFj3C03-c7AXeWglp2hOZt7jH__fq0ZxLq8pcKqPOPwigcX5wAPT6i5RipjslgBx7BHMCnxox2u2qRDk7pWaYOBnd1msuI3jlWKSSj_kI_BdP9ckCYi7tAKWpbTC4yIwuLQcwSCX2ifaR5N_tF-QQJoP1yQU7lb5LWK_SHKDq-IbunrmkJiLEzfJJTAG1aVOkT6K2VuldEs3L6FKC3CN_6DXWGKB-CRAqzLqHM4WH7TOY");'></div>
+</div>
+<div class="col-span-2 md:col-span-1 row-span-1 relative group cursor-pointer">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Outdoor infinity pool deck with lounge chairs at sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9TKSRHvXp_vY4EzxQS1Op2pGXYQIcZkq8hUojzSGO0F7yRIwg7UrsBZh0HRiOSwuJCQHckyXKhZacZzrCNyXCNlk-rwl--m-VRV2VSdtbEdHiv9W_w1rgygjaIbs9vKhvdJuWJF9Q_KJT9wagaxCmV6aOKB1ufPwlUGMiSqp3VsK7wtWQy7_Ugd-8aF3iizntJWLxZGmYi5Z05dhLM-GlRA62MA98IUigd8gNsqJHShCsPi_D-tK8LQdh2eXflhSMbFmjWEDktxs");'></div>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-white font-medium flex items-center gap-1">
+<span class="material-symbols-outlined">grid_view</span> View all 24 photos
+                        </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="px-5 md:px-10 pb-12 flex justify-center">
+<div class="max-w-[1440px] w-full flex flex-col lg:flex-row gap-8 relative">
+<!-- Left Column: Details -->
+<div class="flex-1 min-w-0">
+<!-- Heading -->
+<div class="mb-6 border-b border-[#2f2d34] pb-6">
+<div class="flex flex-wrap items-start justify-between gap-4">
+<div>
+<h1 class="text-white font-serif text-4xl md:text-5xl font-semibold leading-tight mb-2">The Penthouse at Kileleshwa</h1>
+<p class="text-[#a9a5b1] text-lg font-light flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-base">location_on</span>
+                                    Kileleshwa, Nairobi, Kenya
+                                </p>
+</div>
+<div class="flex gap-2">
+<span class="flex items-center justify-center px-3 py-1 rounded bg-[#2f2d34] border border-[#a693cd]/20 text-[#a693cd] text-xs font-bold uppercase tracking-wider">Exclusive</span>
+<span class="flex items-center justify-center px-3 py-1 rounded bg-[#2f2d34] border border-transparent text-white text-xs font-bold uppercase tracking-wider">New Listing</span>
+</div>
+</div>
+</div>
+<!-- Stats Strip -->
+<div class="flex flex-wrap gap-8 py-6 items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark text-3xl">bed</span>
+<div class="flex flex-col">
+<span class="text-white text-xl font-bold">4</span>
+<span class="text-[#a9a5b1] text-xs uppercase tracking-wide">Bedrooms</span>
+</div>
+</div>
+<div class="w-px h-10 bg-[#2f2d34]"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark text-3xl">shower</span>
+<div class="flex flex-col">
+<span class="text-white text-xl font-bold">5</span>
+<span class="text-[#a9a5b1] text-xs uppercase tracking-wide">Bathrooms</span>
+</div>
+</div>
+<div class="w-px h-10 bg-[#2f2d34]"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark text-3xl">square_foot</span>
+<div class="flex flex-col">
+<span class="text-white text-xl font-bold">4,500</span>
+<span class="text-[#a9a5b1] text-xs uppercase tracking-wide">Sq Ft</span>
+</div>
+</div>
+<div class="w-px h-10 bg-[#2f2d34]"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark text-3xl">garage</span>
+<div class="flex flex-col">
+<span class="text-white text-xl font-bold">3</span>
+<span class="text-[#a9a5b1] text-xs uppercase tracking-wide">Parking</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="py-8 text-[#d1d0d5] leading-relaxed text-lg space-y-6">
+<h3 class="text-white font-serif text-2xl mb-4">Experience Unparalleled Luxury</h3>
+<p>
+                            Nestled in the serene and upscale neighborhood of Kileleshwa, this penthouse redefines luxury living in Nairobi. Spanning over 4,500 square feet, the residence offers panoramic views of the city skyline and lush greenery. Every detail has been meticulously curated, from the imported Italian marble flooring to the custom walnut cabinetry.
+                        </p>
+<p>
+                            The open-plan living area is bathed in natural light, featuring floor-to-ceiling double-glazed windows that ensure tranquility. The gourmet kitchen is equipped with state-of-the-art Miele appliances and a generous island, perfect for entertaining.
+                        </p>
+<p>
+                            Retreat to the master suite, a sanctuary of comfort with a private terrace, walk-in wardrobe, and a spa-inspired bathroom featuring a rain shower and freestanding soaking tub. This is not just a home; it is a statement of success.
+                        </p>
+</div>
+<!-- Amenities -->
+<div class="py-8 border-t border-[#2f2d34]">
+<h3 class="text-white font-serif text-2xl mb-6">Amenities</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark">pool</span>
+<span class="text-[#d1d0d5]">Heated Swimming Pool</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark">fitness_center</span>
+<span class="text-[#d1d0d5]">Fully Equipped Gym</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark">bolt</span>
+<span class="text-[#d1d0d5]">Full Backup Generator</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark">water_drop</span>
+<span class="text-[#d1d0d5]">Borehole Water Supply</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark">elevator</span>
+<span class="text-[#d1d0d5]">High-speed Elevators</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark">videocam</span>
+<span class="text-[#d1d0d5]">CCTV Surveillance</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark">wifi</span>
+<span class="text-[#d1d0d5]">Fibre Ready</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-dark">local_cafe</span>
+<span class="text-[#d1d0d5]">Residents Lounge</span>
+</div>
+</div>
+</div>
+<!-- Map -->
+<div class="py-8 border-t border-[#2f2d34]">
+<h3 class="text-white font-serif text-2xl mb-6">Location</h3>
+<div class="w-full h-[400px] rounded-lg overflow-hidden relative bg-[#2f2d34]">
+<!-- Static Map Placeholder -->
+<img class="w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="Dark themed map of Kileleshwa, Nairobi showing property location" data-location="Nairobi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDms7Z74gkO7pOVKDtdVGy9xCS23JrAU7ZteOhq3Vu9Qcflxphm7oStKvUWtLiG0nq1lv9CUkA35o4iY5KFe3jao-HTguMbz41PI07CxvR3ejKw9M4ejh_KaKKBWm1jzwQ824dhOnidjjkylvBfiOy8UzeNjGCu5sZjWWyuergeeim9N5YUfeLg0MIKrBrYXj6MRw4ScH7xEO-jqsEZ3WqqO_Uq7LI_617Kj1HzWSLRAT6afK6vRK6tyliQq1RPT5htYwF3txmAMNw"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-lg animate-bounce">location_on</span>
+<div class="w-4 h-1 bg-black/50 blur-sm rounded-full mx-auto mt-[-5px]"></div>
+</div>
+</div>
+<div class="absolute bottom-4 right-4 bg-background-dark p-2 rounded border border-primary/20">
+<p class="text-xs text-[#a9a5b1]">Kileleshwa, Nairobi</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Sidebar -->
+<div class="w-full lg:w-[380px] shrink-0">
+<div class="sticky top-28 flex flex-col gap-6">
+<!-- Price & Action Card -->
+<div class="bg-card-glass backdrop-blur-md rounded-xl p-6 border border-primary/30 shadow-2xl">
+<div class="mb-6">
+<p class="text-sm text-[#a9a5b1] uppercase tracking-wider mb-1">Asking Price</p>
+<h2 class="text-3xl font-serif font-bold text-gold">KES 85,000,000</h2>
+</div>
+<button class="w-full bg-primary hover:bg-primary-dark text-white font-bold text-base py-4 rounded transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2 mb-3">
+<span class="material-symbols-outlined">calendar_today</span>
+                                Request Viewing
+                            </button>
+<button class="w-full bg-transparent border border-white/20 hover:border-primary hover:text-primary text-white font-medium text-sm py-3 rounded transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">download</span>
+                                Download Brochure
+                            </button>
+</div>
+<!-- Agent Card -->
+<div class="bg-card-glass backdrop-blur-md rounded-xl p-6 border border-primary/20">
+<div class="flex items-center gap-4 mb-4">
+<div class="size-16 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Portrait of Sarah Mwangi, Senior Property Consultant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2Q-8aZW9Yb6ltJJdPNuo0DT1aK0xUXEOwDm8-6wePLtX5BTwIXvk0bYNYUDXyvW-3aE7s0q45Lp_ZIQrZ7uEijdbewc8ckndvHKpvH2y8bcKmOXUOIK2CojwrDsQDiQsKTwE04hhV1ILFCzMrioK8jTWZACe83ZB3JO4a4lidmo9EwjzS6wHejtAweH7QY1_ovipXRjr6asr8hOCTZyXbAIBCX0xVfEncLRmOL_rP7gbdEl_T9bU7F1CFT_KX5bJsL5hy6CJdPzk");'></div>
+<div>
+<h4 class="text-white font-bold text-lg">Sarah Mwangi</h4>
+<p class="text-[#a9a5b1] text-sm">Senior Consultant</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-[#2f2d34] hover:bg-[#3E3B45] text-white py-2 px-4 rounded text-sm font-medium flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-primary text-sm">call</span>
+                                    +254 700 123 456
+                                </button>
+<button class="w-full bg-[#2f2d34] hover:bg-[#3E3B45] text-white py-2 px-4 rounded text-sm font-medium flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+                                    Email Agent
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Similar Listings -->
+<div class="bg-[#1e1b24] py-16 px-5 md:px-10 border-t border-[#2f2d34]">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-white font-serif text-3xl mb-2">Similar Properties</h2>
+<p class="text-[#a9a5b1]">Exclusive listings you might also love</p>
+</div>
+<a class="text-primary hover:text-white transition-colors text-sm font-bold flex items-center gap-1" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group bg-card-glass border border-white/5 hover:border-primary/50 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1">
+<div class="h-64 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern villa exterior with white facade and large glass windows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4M7ytVBWf5zo-kXMZ__lcfn15yhLoV1AyWi-H7NtB6xMYL8X_6rY84JOy2l6KPeSVnBkmAP5rGJNbm_IvoQhGb90SlQyoCo7PsXQjswwR6gfuPh8DjLBL-N_0uqhtJ4IeA1CGUQ4wHmn9gyusGwnGN5Y1D4XmPVPaVXFhbhJF0iS05_lsm-j18X7BvM5KC0FjouwkkAI5Y4T7oefjqnge6Ykw3IUd1RZ3Thq1TCOJQLpFFt4sk6sdTShomQsLnszDIZ3WhbWu88s");'></div>
+<div class="absolute top-4 left-4 bg-[#18151d]/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white uppercase">For Sale</div>
+</div>
+<div class="p-5">
+<p class="text-gold font-bold text-lg mb-1">KES 120,000,000</p>
+<h3 class="text-white font-serif text-xl mb-2 truncate">Riverside Mansion</h3>
+<p class="text-[#a9a5b1] text-sm mb-4 flex items-center gap-1"><span class="material-symbols-outlined text-xs">location_on</span> Riverside Drive, Nairobi</p>
+<div class="flex items-center gap-4 text-[#d1d0d5] text-sm pt-4 border-t border-white/10">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">bed</span> 5</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">shower</span> 6</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">square_foot</span> 6,000</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-card-glass border border-white/5 hover:border-primary/50 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1">
+<div class="h-64 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Contemporary apartment interior with dark wood accents" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1yIjibntnkKtSrc7PiK95Qai2koN8PAvzpNA04FFM7jhN2niJ-vIVDr3ka4EUbMAdma1j8gj5R3HmmkYnHAuP6FcrgqSdNCx6EMswgb64k7KFdrW74oFU3XFAqUPu80mZ6TvHMTWdvHLuc_A65S84Wox-lDzPcupDiR1jj2vntYlFeSKbcaupPH8-KPCESnV4oUYvksXoh0BWioiUQcU8hUtwk0IZTEUJZuUSHBNhMtJtEiakh22TDIb6lOXQKOGa2A-VKg73C2c");'></div>
+<div class="absolute top-4 left-4 bg-[#18151d]/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white uppercase">For Sale</div>
+</div>
+<div class="p-5">
+<p class="text-gold font-bold text-lg mb-1">KES 65,000,000</p>
+<h3 class="text-white font-serif text-xl mb-2 truncate">The Azure Suites</h3>
+<p class="text-[#a9a5b1] text-sm mb-4 flex items-center gap-1"><span class="material-symbols-outlined text-xs">location_on</span> Westlands, Nairobi</p>
+<div class="flex items-center gap-4 text-[#d1d0d5] text-sm pt-4 border-t border-white/10">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">bed</span> 3</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">shower</span> 4</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">square_foot</span> 2,800</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-card-glass border border-white/5 hover:border-primary/50 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1">
+<div class="h-64 overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Luxury townhouse with private garden and patio" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjcpXiieNNfPbERZ_IwpptRXMrR8w9XTvbWvZ9o-FDquAsksBqccmSEZoqTEhWRJNUBnIfF_n3ldaM3xU9v664dCxwG-L9Va38uzM0FbDD1o8D9C9HTyAN0f_Ix7HnAJHB1-AvZske_7siCOss2Fe3lmDW1F4qIv_Rt9J4FTi0YPbGkVdvSqXmiMCwa9-c-W_F71n36NvR0oaBQ6soBAL7zYF-ZAqYEn-ttbTPkoJEfT5am3tCXgef4iKODE7xyyRaaOa0kHJ2D4Q");'></div>
+<div class="absolute top-4 left-4 bg-[#18151d]/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white uppercase">For Sale</div>
+</div>
+<div class="p-5">
+<p class="text-gold font-bold text-lg mb-1">KES 90,000,000</p>
+<h3 class="text-white font-serif text-xl mb-2 truncate">Lavington Green</h3>
+<p class="text-[#a9a5b1] text-sm mb-4 flex items-center gap-1"><span class="material-symbols-outlined text-xs">location_on</span> Lavington, Nairobi</p>
+<div class="flex items-center gap-4 text-[#d1d0d5] text-sm pt-4 border-t border-white/10">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">bed</span> 4</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">shower</span> 5</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-base">square_foot</span> 3,500</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

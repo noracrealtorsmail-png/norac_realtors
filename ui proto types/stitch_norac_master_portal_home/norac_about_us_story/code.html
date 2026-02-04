@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Norac - Defining the Skyline</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#5b13ec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#161022",
+              "gold": "#D4AF37",
+            },
+            fontFamily: {
+              "display": ["Newsreader", "serif"],
+              "sans": ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(22, 16, 34, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(91, 19, 236, 0.2);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(91, 19, 236, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(91, 19, 236, 0.2);
+        }
+        .btn-glow {
+            transition: box-shadow 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px 5px rgba(91, 19, 236, 0.4);
+        }
+        /* Editorial Drop Cap */
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            font-weight: bold;
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+            color: #D4AF37; /* Gold */
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-300 overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Sticky Navigation with Glass Effect -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300">
+<div class="max-w-[1400px] mx-auto glass-panel rounded-full px-8 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">apartment</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-white">Norac</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium text-white/80 hover:text-white hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-white text-primary drop-shadow-[0_0_8px_rgba(91,19,236,0.5)]" href="#">Story</a>
+<a class="text-sm font-medium text-white/80 hover:text-white hover:text-primary transition-colors" href="#">Portfolio</a>
+<a class="text-sm font-medium text-white/80 hover:text-white hover:text-primary transition-colors" href="#">Investors</a>
+</div>
+<button class="hidden md:flex items-center gap-2 bg-primary text-white px-5 py-2 rounded-full text-sm font-bold tracking-wide hover:bg-primary/90 btn-glow">
+<span>Inquire</span>
+<span class="material-symbols-outlined text-sm">arrow_outward</span>
+</button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Cinematic Hero Section -->
+<header class="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-background-dark/30 via-background-dark/60 to-background-dark z-10"></div>
+<div class="absolute inset-0 bg-background-dark/20 z-10 mix-blend-multiply"></div>
+<div class="w-full h-full bg-cover bg-center bg-no-repeat transform scale-105" data-alt="Low angle view of modern glass skyscraper reflecting clouds" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaVhLNLi25qatA1dTSiJsd-btCO5UE2jzFRkciFB0Bf8K3IDjWmbMTeroqxtqAUKA_0Kl7umivtlDlG76I4FRs7tXGqr3REmHrJK1bMWVBX1pfa8KFtZUqSbDrUXTDvS8KtO7g5qwyqhkuQFy0Owl-fchQyCKSpiakb5jNLjgiFza7vCL157KQFL5t1RGVb5lc4c6Q3e-oPWdlZ8Q8S3be6G76EEanbooAh4EJAxjqwftJ4WC86MP_fM4YumsMsfZnoFl4KnNZTmg');">
+</div>
+</div>
+<div class="relative z-20 container mx-auto px-6 text-center flex flex-col items-center gap-8 mt-20">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold/30 bg-gold/10 backdrop-blur-sm mb-4">
+<span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+<span class="text-xs font-sans font-medium text-gold uppercase tracking-widest">Est. 1998</span>
+</div>
+<h1 class="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white leading-[0.9] mix-blend-overlay opacity-90">
+                Defining <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-400">The Skyline</span>
+</h1>
+<p class="max-w-xl text-lg md:text-xl text-white/80 font-light leading-relaxed mt-4">
+                Norac combines engineering precision with real estate luxury to craft the horizons of tomorrow.
+            </p>
+<div class="mt-8 flex flex-col sm:flex-row gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white h-12 px-8 rounded-lg font-bold flex items-center gap-2 btn-glow transition-all">
+                    Explore Our Legacy
+                    <span class="material-symbols-outlined">south</span>
+</button>
+<button class="glass-panel text-white h-12 px-8 rounded-lg font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-gold">play_circle</span>
+                    Watch Reel
+                </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-bounce z-20">
+<span class="text-xs uppercase tracking-widest font-sans">Scroll</span>
+<span class="material-symbols-outlined">keyboard_arrow_down</span>
+</div>
+</header>
+<!-- Editorial Narrative Section -->
+<section class="py-24 px-6 relative bg-background-dark">
+<!-- Decorative Glow -->
+<div class="absolute top-1/2 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none"></div>
+<div class="max-w-3xl mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="text-gold text-sm font-sans font-bold uppercase tracking-[0.2em] mb-4">The Narrative</h2>
+<h3 class="text-4xl md:text-5xl font-bold text-white mb-6">From Blueprint to Icon</h3>
+<div class="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
+</div>
+<article class="prose prose-invert prose-lg md:prose-xl mx-auto text-white/80 font-display">
+<p class="drop-cap mb-6 leading-relaxed">
+                    Founded with a singular vision to transform the urban landscape, Norac has evolved from a boutique engineering firm into a premier real estate powerhouse. Our journey is defined not just by the structures we build, but by the communities we foster and the horizons we expand.
+                </p>
+<p class="mb-6 leading-relaxed">
+                    We believe that true luxury lies in the details. Every beam placed, every facade polished, and every floor plan drafted serves a greater purpose: to elevate the human experience. In a world of rapid construction, we choose the path of meticulous craftsmanship, blending the art of design with the science of durability.
+                </p>
+<p class="leading-relaxed border-l-4 border-primary pl-6 italic text-white my-8">
+                    "We don't just build spaces; we curate environments where ambition meets tranquility, and where the future is not just imagined, but lived."
+                </p>
+</article>
+</div>
+</section>
+<!-- Bento Grid History Section -->
+<section class="py-24 px-6 bg-background-dark relative">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="text-4xl md:text-6xl font-bold text-white mb-2">Our Milestones</h2>
+<p class="text-white/60 text-lg">A history built on solid foundations and visionary leaps.</p>
+</div>
+<a class="text-gold hover:text-white transition-colors flex items-center gap-2 text-sm font-bold uppercase tracking-widest" href="#">
+                    View Full Timeline <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
+<!-- Item 1: Large Image -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl border border-white/5">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close up of architectural blueprints and drafting tools" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvandBc38fIfui6vF0VRjjJrvhw4U0Y-SjRQ4cMcWK9SmeOv-BGEFaJukfQbk2W7ersz6oZ4kCq8zn7QleVv_X85yGk1LpiWJTC3BytX4erPfWCzVXUWnKVejj_WjTUfiE96DMjCvruvejEdBs8JYBUtDlTmL3ZanIudw0YaZusBQOLIiA3e5txsmb_DG_Nb1tML-9dFUxYspfzGuDel66tDyVqP9YVYydVb7KZLMSRSSn_0LlCLDHobWB01aNG6sBAPKJmYMpQP0');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="text-gold font-sans text-xs font-bold uppercase tracking-wider mb-2 block">The Beginning</span>
+<h3 class="text-2xl font-bold text-white">Original Blueprints</h3>
+<p class="text-white/70 mt-2 text-sm line-clamp-2">The sketch that started it all in a small studio in downtown, setting the standard for precision.</p>
+</div>
+</div>
+<!-- Item 2: Stat Card -->
+<div class="md:col-span-1 md:row-span-1 bg-primary/10 border border-primary/20 rounded-xl p-6 flex flex-col justify-center items-center text-center group hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary mb-4 group-hover:scale-110 transition-transform">apartment</span>
+<h3 class="text-5xl font-bold text-white mb-1">150+</h3>
+<p class="text-white/60 text-sm font-sans uppercase tracking-widest">Projects Completed</p>
+</div>
+<!-- Item 3: Typography Art -->
+<div class="md:col-span-1 md:row-span-1 bg-[#1A1625] border border-white/5 rounded-xl p-6 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-4 -top-4 text-9xl font-bold text-white/5 select-none pointer-events-none">25</div>
+<h3 class="text-xl font-bold text-white relative z-10">Years of<br/>Excellence</h3>
+<p class="text-white/50 text-xs mt-2 relative z-10">Delivering quality consistently since the late 90s.</p>
+</div>
+<!-- Item 4: Flagship Image -->
+<div class="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-xl border border-white/5">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Low angle architectural shot of the flagship tower against a blue sky" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDK2u_b6IjalPPDp8GXEt4EwSWRAqmflurdgRSNX_fdRv_fGErcTIW47Q44vVc7nSbQe_wIQunnyxKAmI1-l-cGcRVATNh4VDuldi4KnWW66HrQeYTLvSTjfw7Z1tXwNcWQW2xAiLgy6SWK1svHy-aApOfUn7A5JxSdYQEitz_D1SqVsYbYxyub_A2QlHWe-U23DULH01msq1kFWlTStYp5A0i0DOfb9lBgkw63wKznJjO--M_GhRLwb8JGbF1jcJRCKcql8SPWdjk');">
+</div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-xl font-bold text-white">The Apex Tower</h3>
+<p class="text-white/80 text-sm">Our crowning achievement in sustainable luxury.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-24 px-6 bg-background-dark relative overflow-hidden">
+<!-- Background radial gradient -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="mb-16 text-center">
+<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">The Visionaries</h2>
+<p class="text-white/60 max-w-2xl mx-auto">Meet the minds engineering the future of real estate.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Leader 1 -->
+<div class="glass-card rounded-2xl p-6 flex flex-col gap-6 group">
+<div class="w-full aspect-[4/5] overflow-hidden rounded-lg bg-gray-800 relative">
+<img alt="Portrait of James Sterling, CEO" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNHX9ulp2-b1HkT57ME1i6zJdzVhfE459L9P0auNxdp4IapJzkb_aBQx8sKHlVDbA9PakIeaAnA2hGrQqfeMpY7GHz90uVTReC3wMnVeAfaTMPMqpdrkM9DsPsFQ4PFWsccSPxrc4zAKSx1gWTmtD4Gjm_mRh9nMMK33Mqg1YPL75TNbLN_JjEI0DotflH57VaZ6WRaSCsCHPM7LN9h_VJyM0VFwfNVM9kejA53CzMUmEmI5PEZ4weV4MoUd3ectiTpPc7pz0-hFY"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+<div class="flex gap-2 justify-end">
+<a class="text-white/70 hover:text-white" href="#"><i class="material-symbols-outlined text-lg">link</i></a>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-white">James Sterling</h3>
+<p class="text-primary font-sans text-xs font-bold uppercase tracking-widest mb-3">Founder &amp; CEO</p>
+<p class="text-white/70 text-sm leading-relaxed">
+                            With over 25 years in civil engineering, James leads Norac with a philosophy of structural integrity and aesthetic daring.
+                        </p>
+</div>
+</div>
+<!-- Leader 2 -->
+<div class="glass-card rounded-2xl p-6 flex flex-col gap-6 group">
+<div class="w-full aspect-[4/5] overflow-hidden rounded-lg bg-gray-800 relative">
+<img alt="Portrait of Elena Vance, Lead Architect" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSuvbYr3Ufl26VXH0ruuDDr0loER981JyvNkQ4_y-FTBZhvKvhOB6bLNKMB9loUlWfNh5S7XTMCXxTrDwm9IK3IJMm-HH3uLaNLjjzThEWd2OAQBgjZYPEH0Xo2qB_IO_4-7gnB2R5J_v2Cj4rPC6pSVAM0QUPoYBbnKH8CMJdoXpql7FcAmttdHUZi4j_JYzkP55tAqv87YbcxbJqN6mUSMgAU1hxw7C64qU7CGrs6TaGnpKZKQcmEsOAr22t04O7lpK6A743BnI"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+<div class="flex gap-2 justify-end">
+<a class="text-white/70 hover:text-white" href="#"><i class="material-symbols-outlined text-lg">link</i></a>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-white">Elena Vance</h3>
+<p class="text-primary font-sans text-xs font-bold uppercase tracking-widest mb-3">Lead Architect</p>
+<p class="text-white/70 text-sm leading-relaxed">
+                            Elena brings an avant-garde approach to our projects, ensuring every Norac building is a unique piece of habitable art.
+                        </p>
+</div>
+</div>
+<!-- Leader 3 -->
+<div class="glass-card rounded-2xl p-6 flex flex-col gap-6 group">
+<div class="w-full aspect-[4/5] overflow-hidden rounded-lg bg-gray-800 relative">
+<img alt="Portrait of Marcus Chen, COO" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkOjLKK0NdaOteJBjQth1J7K7y6oDdVXnQdcdmZ3afvRzktnvsn7ZIB2A2tTSKue1wR1bfj_7pidJvVrTcjVky6fNHu8nrUL5uzgyRU9BuXzdJGdPaH3gaNXD_T5gpOnZUlSCsdjeh0Ta3sX9isnEvjVmDjFaaoqKS8xZCMWO6nRCCz-2onrheN3miYTIohJxYos6AGKNIcR9T__Dic041MV3Cm1HeAP2hAdED0k1-42RIIUViNpq_gCcpfmLqnFVoSplW053izms"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+<div class="flex gap-2 justify-end">
+<a class="text-white/70 hover:text-white" href="#"><i class="material-symbols-outlined text-lg">link</i></a>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-white">Marcus Chen</h3>
+<p class="text-primary font-sans text-xs font-bold uppercase tracking-widest mb-3">Chief of Operations</p>
+<p class="text-white/70 text-sm leading-relaxed">
+                            Marcus orchestrates the complex logistics of global development, ensuring that our ambitious timelines meet reality.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action / Footer -->
+<footer class="bg-[#0F0F12] border-t border-white/5 pt-20 pb-10 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20">
+<div class="max-w-2xl">
+<h2 class="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">Ready to build <br/> <span class="text-white/30">the extraordinary?</span></h2>
+<button class="bg-primary hover:bg-primary/90 text-white h-14 px-8 rounded-lg font-bold text-lg flex items-center gap-3 btn-glow">
+                        Start Your Project
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-12 md:gap-24">
+<div class="flex flex-col gap-4">
+<h4 class="text-gold font-sans text-xs font-bold uppercase tracking-widest mb-2">Company</h4>
+<a class="text-white/60 hover:text-white transition-colors" href="#">About</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Careers</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Press</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-gold font-sans text-xs font-bold uppercase tracking-widest mb-2">Social</h4>
+<a class="text-white/60 hover:text-white transition-colors" href="#">LinkedIn</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Instagram</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Twitter / X</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-white/40 text-sm font-sans">© 2023 Norac Inc. All rights reserved.</p>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="text-white/40 text-sm font-sans">All Systems Operational</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

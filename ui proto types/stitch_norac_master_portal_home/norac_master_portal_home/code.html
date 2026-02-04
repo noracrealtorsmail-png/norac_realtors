@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Norac Master Portal Home</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a693cd",
+                        "accent-gold": "#D4AF37",
+                        "background-light": "#f7f6f7",
+                        "background-dark": "#0D0D0D",
+                        "surface-dark": "#141316",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Cormorant Garamond", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "2px", "sm": "2px", "md": "4px", "lg": "6px", "xl": "8px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Styles for Specific Effects */
+        .glass-panel {
+            background: rgba(20, 19, 22, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(166, 147, 205, 0.1);
+        }
+        
+        .glass-nav {
+            background: rgba(13, 13, 13, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(166, 147, 205, 0.05);
+        }
+
+        .text-outline-purple {
+            -webkit-text-stroke: 1px rgba(166, 147, 205, 0.3);
+            color: transparent;
+        }
+
+        .grid-card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .grid-card-hover:hover {
+            border-color: rgba(212, 175, 55, 0.5); /* Gold border on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Architectural precision lines */
+        .arch-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Background Layer with Giant Typography -->
+<div class="fixed inset-0 z-0 flex items-center justify-center overflow-hidden pointer-events-none select-none">
+<h1 class="font-serif text-[15vw] leading-none font-bold text-outline-purple opacity-20 tracking-tighter whitespace-nowrap translate-y-12">
+            NORAC
+        </h1>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-background-dark opacity-90"></div>
+</div>
+<!-- Main Wrapper -->
+<div class="relative z-10 flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 glass-nav">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-gold text-3xl">diamond</span>
+<span class="font-serif text-2xl font-bold tracking-widest text-white">NORAC</span>
+</div>
+<!-- Center Links (Desktop) -->
+<div class="hidden md:flex items-center gap-12">
+<a class="text-sm uppercase tracking-[0.15em] text-white/70 hover:text-accent-gold transition-colors duration-300" href="#">Properties</a>
+<a class="text-sm uppercase tracking-[0.15em] text-white/70 hover:text-accent-gold transition-colors duration-300" href="#">Corporate</a>
+<a class="text-sm uppercase tracking-[0.15em] text-white/70 hover:text-accent-gold transition-colors duration-300" href="#">Concierge</a>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-6">
+<button class="text-white/70 hover:text-white transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="hidden md:flex items-center justify-center h-10 px-6 border border-primary/30 text-primary hover:border-accent-gold hover:text-accent-gold transition-all duration-300 rounded-sm text-xs font-bold uppercase tracking-widest bg-primary/5">
+                        Client Login
+                    </button>
+<button class="text-white hover:text-accent-gold transition-colors md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow pt-28 pb-12 px-6">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-12">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 py-8 border-b border-white/5">
+<div class="max-w-2xl">
+<p class="text-accent-gold text-xs font-bold uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+<span class="w-8 h-[1px] bg-accent-gold"></span>
+                            Est. 1999
+                        </p>
+<h2 class="font-serif text-5xl md:text-7xl font-light leading-[0.9] text-white">
+                            Redefining <span class="italic text-primary/80">Luxury</span> <br/>
+                            Real Estate &amp; Corporate Assets.
+                        </h2>
+</div>
+<div class="flex flex-col gap-2 md:text-right">
+<p class="text-white/60 text-sm max-w-xs md:ml-auto">
+                            Curating a portfolio of exceptional properties and strategic investments across the globe.
+                        </p>
+<a class="group flex items-center gap-2 text-white hover:text-accent-gold transition-colors md:justify-end mt-2" href="#">
+<span class="uppercase text-xs font-bold tracking-widest">Explore Portfolio</span>
+<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[minmax(180px,auto)]">
+<!-- 1. Hero Feature Card (Large) - Spans 8 cols -->
+<div class="group relative col-span-1 md:col-span-8 row-span-2 rounded-sm overflow-hidden border border-white/10 grid-card-hover cursor-pointer h-[500px] md:h-auto">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern luxury penthouse interior with floor to ceiling windows overlooking a city at dusk" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWz-wjCKWye3sL1ybsU7BuEzDXTroqx5BzCVcT5NPzpoeCxHbPP0SkwEbmfgegteKV5BuoAjPT1NFBFwg9wJzA_MIkUHeZ4mP7_gZlBJn2GzQSg9WBoLongYpLbgHP1H4iA8Js0KZOzksKNmV54k80EFktePByZkXoFkj0aj5Wt12NaYGax_AAQnaF6QOqJdy3PRRC7EKSeP3hSY-4u4hWvGPmQc_UgNFpD9htzVD3ErzuDzSFPAOZP-emVN3bkxaA5kivmZF5WJA');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute top-6 right-6">
+<span class="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] uppercase tracking-widest rounded-sm">Featured Listing</span>
+</div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<h3 class="font-serif text-3xl md:text-4xl text-white mb-2">The Vantage Point</h3>
+<div class="flex items-center gap-2 text-white/80 text-sm mb-6">
+<span class="material-symbols-outlined text-accent-gold text-sm">location_on</span>
+                                Nairobi, Kenya
+                            </div>
+<div class="flex gap-8 border-t border-white/20 pt-6">
+<div>
+<p class="text-xs text-white/50 uppercase tracking-wider mb-1">Price</p>
+<p class="text-white font-serif text-xl">$4.2M</p>
+</div>
+<div>
+<p class="text-xs text-white/50 uppercase tracking-wider mb-1">Area</p>
+<p class="text-white font-serif text-xl">8,500 sq ft</p>
+</div>
+<div class="ml-auto self-end">
+<button class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-accent-gold hover:border-accent-gold hover:text-black transition-all">
+<span class="material-symbols-outlined">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Corporate Highlight (Medium) - Spans 4 cols -->
+<div class="col-span-1 md:col-span-4 row-span-1 rounded-sm glass-panel p-8 flex flex-col justify-between grid-card-hover group relative overflow-hidden">
+<!-- Abstract BG -->
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&amp;w=1000&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay" data-alt="Abstract geometric purple and dark shapes"></div>
+<div class="relative z-10">
+<div class="w-8 h-8 rounded-sm bg-primary/20 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-lg">pie_chart</span>
+</div>
+<h3 class="font-serif text-2xl text-white mb-2">Corporate Growth</h3>
+<p class="text-white/60 text-sm leading-relaxed">Strategic asset management report for Q3 2023. Analysis of emerging markets.</p>
+</div>
+<div class="relative z-10 pt-4">
+<a class="text-accent-gold text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all" href="#">
+                                View Report <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 3. Stat Card (Small) - Spans 2 cols -->
+<div class="col-span-1 md:col-span-2 row-span-1 rounded-sm border border-white/5 bg-surface-dark p-6 flex flex-col justify-center grid-card-hover">
+<p class="text-white/50 text-xs uppercase tracking-wider mb-1">AUM</p>
+<p class="font-serif text-3xl text-white font-light">$500M<span class="text-accent-gold text-xl">+</span></p>
+<div class="h-[1px] w-full bg-white/10 my-3"></div>
+<p class="text-primary text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> 
+                            12% YOY
+                        </p>
+</div>
+<!-- 4. Quick Link / Concierge (Small) - Spans 2 cols -->
+<div class="col-span-1 md:col-span-2 row-span-1 rounded-sm bg-primary/10 border border-primary/20 p-6 flex flex-col justify-center items-center text-center grid-card-hover cursor-pointer group hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl mb-2 group-hover:scale-110 transition-transform">support_agent</span>
+<p class="text-white text-sm font-medium">Concierge</p>
+<p class="text-white/40 text-[10px] uppercase mt-1">24/7 Service</p>
+</div>
+<!-- 5. Secondary Property (Tall) - Spans 4 cols -->
+<div class="col-span-1 md:col-span-4 row-span-2 rounded-sm overflow-hidden border border-white/10 relative grid-card-hover group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist modern house exterior with pool at night" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvOg_tFyca-s-1MVYJnRKrsCM6SZ7mhsehTr7u_Cv_vUMVibLQN561_0A25o40f2jJlklZUXy3XClcW37CXKwq-3AQcm11atwtWcsgD3mZ4tst2L231rGguofUwj0B3rXs3LhMtsZABvw3vPzAJ6D4lt-G9TYv5Hnc-MV6lFL9_yj7TiIcF5THRvkmD0zJcaOtFrWlSfX3-jNMYwqptO6G3qqKTg8_eHbICFN_tD2qJ8MazIYdZt6SNlZQdcOENQICNlKzl1WzsAI');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-serif text-2xl text-white">Golden Heights</h3>
+<p class="text-accent-gold text-xs uppercase tracking-widest mt-1">Mombasa, Coast</p>
+</div>
+<span class="material-symbols-outlined text-white/50 group-hover:text-white transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- 6. Editorial / Blog (Wide) - Spans 4 cols -->
+<div class="col-span-1 md:col-span-4 row-span-1 rounded-sm glass-panel p-6 flex flex-col justify-center grid-card-hover">
+<div class="flex items-start justify-between mb-3">
+<span class="text-primary text-xs font-bold uppercase tracking-widest border border-primary/30 px-2 py-0.5 rounded-sm">News</span>
+<span class="text-white/40 text-xs">Oct 24</span>
+</div>
+<h3 class="font-serif text-xl text-white leading-snug hover:text-primary transition-colors cursor-pointer">
+                             Norac expands footprint into European commercial sectors.
+                         </h3>
+</div>
+<!-- 7. Search Input (Wide) - Spans 4 cols -->
+<div class="col-span-1 md:col-span-4 row-span-1 rounded-sm bg-surface-dark border border-white/5 p-8 flex flex-col justify-center">
+<label class="text-white/60 text-xs uppercase tracking-widest mb-4">Find your next investment</label>
+<div class="relative group">
+<input class="w-full bg-transparent border-b border-white/20 pb-2 text-white placeholder-white/30 focus:outline-none focus:border-accent-gold transition-colors font-serif text-xl" placeholder="Search locations, assets..." type="text"/>
+<span class="material-symbols-outlined absolute right-0 bottom-3 text-white/50 group-focus-within:text-accent-gold transition-colors">search</span>
+</div>
+</div>
+</div>
+<!-- Section Divider -->
+<div class="py-12">
+<div class="arch-line w-full"></div>
+</div>
+<!-- Additional Editorial Segment -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1">
+<h2 class="font-serif text-4xl text-white mb-6">Experience the Art of Living</h2>
+<p class="text-white/70 leading-relaxed mb-8 max-w-md font-light">
+                            Our philosophy transcends traditional real estate. We curate environments that inspire, empower, and elevate the human experience through architectural mastery.
+                        </p>
+<div class="flex gap-4">
+<div class="flex-1 p-4 border-l border-accent-gold/30">
+<h4 class="text-white font-bold mb-1">Architecture</h4>
+<p class="text-xs text-white/50">Award-winning designs</p>
+</div>
+<div class="flex-1 p-4 border-l border-accent-gold/30">
+<h4 class="text-white font-bold mb-1">Sustainability</h4>
+<p class="text-xs text-white/50">Green energy initiatives</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2 h-[400px] rounded-sm overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract architectural detail of a modern building facade with gold lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABKfcBFb9WO-2cJ8jzVU43bf-d3W3nwC6fv1BBL-Gcg4p5QuGn_QYG-_Usy-8VoSmKSdWjNKr7GSidmiq5nq7_SDB-j7Fq-pX9Phjr1OTgoGEfpfdejBEMmF2264aX5ivudvVHTldlbK-rlGfMb7AcsUYZbsY-zgYmcHsDdW1CpjFn5-YLxFEiuhPYH1gyHyA8Emj1kKs32P5h0r5xd5toMNyP9_x0-tjlx9Vz66xEyXAvqvdAhyWvul7er-4Xr0xS_ZU4M_gCvpE');"></div>
+<!-- Glass Overlay Card -->
+<div class="absolute bottom-6 left-6 right-6 glass-panel p-6 rounded-sm">
+<div class="flex justify-between items-center">
+<span class="text-white text-sm font-medium">Global Ventures</span>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border border-black bg-gray-300 bg-cover" data-alt="Portrait of agent 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2fBpJETdATYYm09CLHA0shXKVUh_L6NGMf1GEWRmoSA5NoSsNi4MuEawHGCCYPaG0ElnrmoJjHvXFphFLqF8fIHfXtQIibPGaMUhl03ZApcEvhHmPWlR9ruz26iqVXN-meeZnubCBwqkogWUGykPz_oPaBeJesLmPZP2YtRQdk5TPplpRTSWC8PiE-L0Zs5hXTzh7EZBxgbjNo7-ZYLZzSxcLd9OTkleEZU9YOElJvi5tqNThPUaL87WSN850Sbt1pUuZDNUwc48');"></div>
+<div class="w-8 h-8 rounded-full border border-black bg-gray-300 bg-cover" data-alt="Portrait of agent 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuIFChqVPB5LpvIEDu_SQYEBphjVBiHwlkTp7MQyx2cuel2X9KyZRqyuf6iN1zTEGfwRcFKlYn-3gU8Ie-kGxxhOEYKwTHF_yAn-zOXb3gz1fXCt3A9-_PXVOm91IAfjXF2ypz1E3yApw55PgSSV00ChgZQQm39mH2bd9x9Np79VMvP57g27c1xMWAz7M-03V5_ZXEs6H-M_kceNeowg8VYNLUm7_xaHj1vOYbNbNSxfzQo5b016AC_k_U9DDYniJ119mZNSKL-KI');"></div>
+<div class="w-8 h-8 rounded-full border border-black bg-surface-dark flex items-center justify-center text-[10px] text-white font-bold">+5</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Minimal Footer Strip -->
+<footer class="mt-auto border-t border-white/5 bg-surface-dark py-6 px-6 relative z-10">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-6 text-xs text-white/40 uppercase tracking-wider">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Sitemap</a>
+</div>
+<div class="text-white/30 text-xs font-light">
+                    © 2024 Norac Holdings. All rights reserved.
+                </div>
+<div class="hidden md:flex items-center gap-2 text-primary/60 text-xs">
+<span class="material-symbols-outlined text-sm animate-bounce">arrow_downward</span>
+                    Scroll for details
+                </div>
+</div>
+</footer>
+</div>
+</body></html>
