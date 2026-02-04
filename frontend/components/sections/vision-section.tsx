@@ -97,11 +97,11 @@ const VisionSection = () => {
                     className="text-center mb-6 relative"
                 >
                     <div className="absolute -inset-20 bg-primary/20 blur-[120px] rounded-full"></div>
-                    <span className="text-primary font-bold tracking-[0.5em] uppercase text-sm mb-6 block drop-shadow-sm">Perspective</span>
+                    <span className="text-primary font-bold tracking-[0.5em] uppercase text-sm mb-2 block drop-shadow-sm">Perspective</span>
                     <h2 className="text-5xl md:text-8xl font-black text-transparent bg-clip-text bg-[var(--vision-gradient-text)] relative z-10 tracking-tight leading-[1.1]">
                         THE NORAC REALTORS <br /> VISION
                     </h2>
-                    <div className="w-32 h-1.5 bg-gradient-to-r from-primary via-blue-400 to-primary/40 mx-auto mt-8 rounded-full shadow-lg shadow-primary/20"></div>
+                    <div className="w-32 h-1.5 bg-gradient-to-r from-primary via-blue-400 to-primary/40 mx-auto mt-4 rounded-full shadow-lg shadow-primary/20"></div>
                 </motion.div>
 
                 {/* --- SCROLL TIMELINE & CARDS --- */}
